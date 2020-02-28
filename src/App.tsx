@@ -32,7 +32,7 @@ class App extends React.Component{
       <div className="App">
         <Form onSubmit={(fData: any) => this.formSubmitHandler(fData)}>
             <FormGroup formGroup="reactForm">
-                <FormControl formControlName="email" type="text" required={true} labelName="new-control" >
+                <FormControl value="">
                     {<div className="form-control-container">
                         <input type="email"
                             name="email" 
@@ -47,7 +47,7 @@ class App extends React.Component{
                 </FormGroup>
                 <FormArray formArrayName="passwordArray">
                 {this.formArray.map((fa, i) => (
-                  <FormGroup formGroup={`${i}`}>
+                  <FormGroup key={i} formGroup={`${i}`}>
                     <FormControl formControlName={Object.keys(fa)[0]} type="password" required={true} labelName="new-control" />
                   </FormGroup>
                 ))}

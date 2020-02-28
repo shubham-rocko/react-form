@@ -4,7 +4,6 @@ import { FormControlProps } from './interface';
 class FormControl extends React.Component <FormControlProps>{
 
     render(){
-        debugger
         const {formControlName, type, required, labelName} = this.props;
         if(this.props.children){
             return (this.props.children)
